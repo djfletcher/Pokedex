@@ -1,7 +1,8 @@
 import React from 'react';
 
 const PokemonIndexItem = poke => (
-  <li key={poke.id}>{poke.name}
+  <li key={poke.id}>
+    <h2>{poke.name}</h2>
     <img src={poke.image_url} />
   </li>
 );
