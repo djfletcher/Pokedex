@@ -4,29 +4,23 @@ import React from 'react';
 class PokeDetail extends React.Component {
   constructor(props){
     super(props);
-    this.poke = this.props.poke[this.props.params.pokeId];
   }
 
-
   componentDidMount(){
-    // debugger;
-    this.props.requestPoke(this.poke);
+    this.props.requestPoke(this.props.params.pokeId);
   }
 
   render() {
-    // const poke = this.poke;
-    // debugger;
-    if (this.poke) {
+    if (this.props.poke.moves) {
       return(
         <div>
-          <img src={this.poke.image_url}></img>
-          <h2>{this.poke.name}</h2>
+          <img src={this.props.poke.image_url}></img>
+          <h2>{this.props.poke.name}</h2>
           <ul>
-            <li>Type: {this.poke.type}</li>
-            <li>Attack: {this.poke.attack}</li>
-            <li>Defense: {this.poke.defense}</li>
-            <li>Moves: {this.poke.moves}</li>
-            <li>Items: {this.poke.items}</li>
+            <li>Type: {this.props.poke.poke_type}</li>
+            <li>Attack: {this.props.poke.attack}</li>
+            <li>Defense: {this.props.poke.defense}</li>
+            <li>Moves: {this.props.poke.moves.join(', ')}</li>
           </ul>
         </div>
       );
@@ -34,7 +28,6 @@ class PokeDetail extends React.Component {
       return <div></div>;
     }
   }
-
 }
 
 export default PokeDetail;

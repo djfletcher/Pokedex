@@ -3,16 +3,7 @@ import { connect } from 'react-redux';
 import { receivePoke, requestPoke } from '../../actions/poke_detail_actions';
 import PokeDetail from './poke_detail';
 
-// const mapStateToProps = state => ({
-//   poke: state.poke
-// });
-
-const mapStateToProps = state => {
-    // debugger;
-  return ({
-    poke: state.pokemon
-  });
-};
+const mapStateToProps = ({ poke }) => ({ poke });
 
 const mapDispatchToProps = dispatch => ({
   requestPoke: poke => dispatch(requestPoke(poke)),

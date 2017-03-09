@@ -8,7 +8,7 @@ export const receivePoke = poke => ({
 });
 
 
-export const requestPoke = poke => dispatch => {
-  return APIUtil.fetchPoke(poke)
-    .then(pokem => dispatch(receivePoke(pokem)));
+export const requestPoke = pokeId => dispatch => {
+  return APIUtil.fetchPoke(pokeId)
+    .then(poke => dispatch(receivePoke(poke)));
 };

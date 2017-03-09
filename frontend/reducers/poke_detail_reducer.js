@@ -1,4 +1,4 @@
-import { RECEIVE_POKE, receivePoke, requestPoke } from '../actions/poke_detail_actions';
+import { RECEIVE_POKE, receivePoke } from '../actions/poke_detail_actions';
 import merge from 'lodash/merge';
 
 const PokeDetailReducer = (state = {}, action) => {
@@ -11,3 +11,5 @@ const PokeDetailReducer = (state = {}, action) => {
   }
 
 };
+
+export default PokeDetailReducer;

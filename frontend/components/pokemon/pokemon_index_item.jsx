@@ -6,8 +6,8 @@ const PokemonIndexItem = poke => {
   return (
     <li key={poke.id}>
     <Link to={path}>
-      <h2>{poke.name}</h2>
-      <img src={poke.image_url} />
+      <img width="28px" src={poke.image_url} />
+       {poke.name}
     </Link>
   </li>
   );
